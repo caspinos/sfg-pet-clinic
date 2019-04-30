@@ -1,10 +1,10 @@
-package hatala.dariusz.sfgpetclinic.services;
+package hatala.dariusz.sfgpetclinic.repository;
 
 import hatala.dariusz.sfgpetclinic.model.Owner;
 
 import java.util.Optional;
 
-public interface OwnerService extends CrudService<Owner, Long> {
+public interface OwnerRepository extends BaseEntityCrudRepository<Owner> {
 
     Optional<Owner> findByLastName(String lastName);
 
