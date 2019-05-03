@@ -2,9 +2,11 @@ package hatala.dariusz.sfgpetclinic.repository.map;
 
 import hatala.dariusz.sfgpetclinic.model.Vet;
 import hatala.dariusz.sfgpetclinic.repository.VetRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+@Repository
 public class VetRepositoryMap extends MapRepositoryAbstract<Vet> implements VetRepository {
 
     @Override
