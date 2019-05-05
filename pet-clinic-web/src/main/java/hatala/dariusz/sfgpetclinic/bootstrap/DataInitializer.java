@@ -39,15 +39,21 @@ public class DataInitializer implements CommandLineRunner {
 
         // Owner init
         Owner john = new Owner("John", "Smith", new HashSet<>());
+            john.setAddress("Long St 12");
+            john.setCity("London");
+            john.setTelephone("111-222-333");
         Owner julie = new Owner("Julie", "Smith", new HashSet<>());
+            julie.setAddress("Long St 12");
+            julie.setCity("London");
+            julie.setTelephone("111-222-333");
         ownerRepository.save( john );
         ownerRepository.save( julie );
 
         // Pet init
-        Pet roxy = new Pet(dog, john, LocalDate.of(1999, 2, 2));
-        Pet maisy = new Pet(cat, julie, LocalDate.of(2015, 1, 21));
+        Pet roxy = new Pet("Roxy", dog, john, LocalDate.of(1999, 2, 2));
+        Pet maisey = new Pet("Maisey", cat, julie, LocalDate.of(2015, 1, 21));
         petRepository.save( roxy );
-        petRepository.save( maisy );
+        petRepository.save( maisey );
 
         // Vet init
         Vet adam = new Vet("Adam", "Burner", new Speciality("Surgeon"));
