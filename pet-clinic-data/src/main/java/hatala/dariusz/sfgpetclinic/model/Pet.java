@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
 @Table(name = "pets")
@@ -27,5 +28,8 @@ public class Pet extends BaseEntity {
 
     @Column(name = "birth_date")
     private LocalDate birthDate;
+
+    @OneToMany(mappedBy = "pet", cascade = CascadeType.ALL)
+    private Set<Visit> visits;
 
 }
