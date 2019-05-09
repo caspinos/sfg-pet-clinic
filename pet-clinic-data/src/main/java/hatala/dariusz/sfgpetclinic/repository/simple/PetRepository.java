@@ -1,4 +1,4 @@
-package hatala.dariusz.sfgpetclinic.repository;
+package hatala.dariusz.sfgpetclinic.repository.simple;
 
 import hatala.dariusz.sfgpetclinic.model.Pet;
 

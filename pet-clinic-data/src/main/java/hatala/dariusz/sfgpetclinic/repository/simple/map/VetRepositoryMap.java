@@ -1,7 +1,7 @@
-package hatala.dariusz.sfgpetclinic.repository.map;
+package hatala.dariusz.sfgpetclinic.repository.simple.map;
 
 import hatala.dariusz.sfgpetclinic.model.Vet;
-import hatala.dariusz.sfgpetclinic.repository.VetRepository;
+import hatala.dariusz.sfgpetclinic.repository.simple.VetRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;

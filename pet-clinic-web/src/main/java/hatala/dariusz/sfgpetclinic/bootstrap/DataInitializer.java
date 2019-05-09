@@ -1,7 +1,7 @@
 package hatala.dariusz.sfgpetclinic.bootstrap;
 
 import hatala.dariusz.sfgpetclinic.model.*;
-import hatala.dariusz.sfgpetclinic.repository.*;
+import hatala.dariusz.sfgpetclinic.repository.simple.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

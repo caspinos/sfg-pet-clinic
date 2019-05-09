@@ -1,6 +1,6 @@
 package hatala.dariusz.sfgpetclinic.controllers;
 
-import hatala.dariusz.sfgpetclinic.repository.VetRepository;
+import hatala.dariusz.sfgpetclinic.repository.simple.VetRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

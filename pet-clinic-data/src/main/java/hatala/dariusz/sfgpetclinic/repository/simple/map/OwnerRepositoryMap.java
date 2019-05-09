@@ -1,7 +1,7 @@
-package hatala.dariusz.sfgpetclinic.repository.map;
+package hatala.dariusz.sfgpetclinic.repository.simple.map;
 
 import hatala.dariusz.sfgpetclinic.model.Owner;
-import hatala.dariusz.sfgpetclinic.repository.OwnerRepository;
+import hatala.dariusz.sfgpetclinic.repository.simple.OwnerRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;

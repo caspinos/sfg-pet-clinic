@@ -1,7 +1,7 @@
-package hatala.dariusz.sfgpetclinic.repository.map;
+package hatala.dariusz.sfgpetclinic.repository.simple.map;
 
 import hatala.dariusz.sfgpetclinic.model.BaseEntity;
-import hatala.dariusz.sfgpetclinic.repository.BaseEntityCrudRepository;
+import hatala.dariusz.sfgpetclinic.repository.simple.BaseEntityCrudRepository;
 
 import java.util.*;
 
