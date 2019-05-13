@@ -1,6 +1,6 @@
 package hatala.dariusz.sfgpetclinic.controllers;
 
-import hatala.dariusz.sfgpetclinic.repository.simple.OwnerRepository;
+import hatala.dariusz.sfgpetclinic.service.OwnerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/owners")
 public class OwnerController {
 
-    private final OwnerRepository ownerRepository;
+    private final OwnerService ownerRepository;
 
-    public OwnerController(OwnerRepository ownerRepository) {
+    public OwnerController(OwnerService ownerRepository) {
         this.ownerRepository = ownerRepository;
     }
 

@@ -1,34 +1,36 @@
 package hatala.dariusz.sfgpetclinic.bootstrap;
 
 import hatala.dariusz.sfgpetclinic.model.*;
-import hatala.dariusz.sfgpetclinic.repository.simple.*;
+import hatala.dariusz.sfgpetclinic.service.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 
 @Component
 public class DataInitializer implements CommandLineRunner {
 
-    private final OwnerRepository ownerRepository;
-    private final VetRepository vetRepository;
-    private final PetRepository petRepository;
-    private final PetTypeRepository petTypeRepository;
-    private final SpecialityRepository specialityRepository;
+    private final OwnerService ownerService;
+    private final VetService vetService;
+    private final PetService petService;
+    private final PetTypeService petTypeService;
+    private final SpecialityService specialityService;
 
-    public DataInitializer(OwnerRepository ownerRepository, VetRepository vetRepository, PetRepository petRepository, PetTypeRepository petTypeRepository, SpecialityRepository specialityRepository) {
-        this.ownerRepository = ownerRepository;
-        this.vetRepository = vetRepository;
-        this.petRepository = petRepository;
-        this.petTypeRepository = petTypeRepository;
-        this.specialityRepository = specialityRepository;
+    public DataInitializer(OwnerService ownerService, VetService vetService, PetService petService, PetTypeService petTypeService, SpecialityService specialityService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
+        this.petService = petService;
+        this.petTypeService = petTypeService;
+        this.specialityService = specialityService;
     }
 
     @Override
     public void run(String... args) throws Exception {
 
-        if( petRepository.findAll().size() == 0) {
+        if( petService.findAll().size() == 0) {
             System.out.println("Creating initial data");
             loadData();
         } else {
@@ -41,8 +43,8 @@ public class DataInitializer implements CommandLineRunner {
         // PetType init
         PetType dog = new PetType("dog");
         PetType cat = new PetType("cat");
-        petTypeRepository.save( dog );
-        petTypeRepository.save( cat );
+        petTypeService.save( dog );
+        petTypeService.save( cat );
 
         // Owner init
         Owner john = new Owner("John", "Smith", new HashSet<>());
@@ -53,28 +55,28 @@ public class DataInitializer implements CommandLineRunner {
             julie.setAddress("Long St 12");
             julie.setCity("London");
             julie.setTelephone("111-222-333");
-        ownerRepository.save( john );
-        ownerRepository.save( julie );
+        ownerService.save( john );
+        ownerService.save( julie );
 
         // Pet init
-        Pet roxy = new Pet("Roxy", dog, john, LocalDate.of(1999, 2, 2));
-        Pet maisey = new Pet("Maisey", cat, julie, LocalDate.of(2015, 1, 21));
-        petRepository.save( roxy );
-        petRepository.save( maisey );
+        Pet roxy = new Pet("Roxy", dog, john, LocalDate.of(1999, 2, 2), new HashSet<>());
+        Pet maisey = new Pet("Maisey", cat, julie, LocalDate.of(2015, 1, 21), new HashSet<>());
+        petService.save( roxy );
+        petService.save( maisey );
 
         // Speciality init
         Speciality surgery = new Speciality("Surgery");
         Speciality radiology = new Speciality("Radiology");
         Speciality dentistry= new Speciality("Dentistry");
-        specialityRepository.save( surgery );
-        specialityRepository.save( radiology );
-        specialityRepository.save( dentistry );
+        specialityService.save( surgery );
+        specialityService.save( radiology );
+        specialityService.save( dentistry );
 
         // Vet init
-        Vet adam = new Vet("Adam", "Burner", surgery);
-        Vet mike = new Vet("Mike", "Robinson", dentistry);
+        Vet adam = new Vet("Adam", "Burner",  new HashSet<>(Arrays.asList(surgery, radiology)));
+        Vet mike = new Vet("Mike", "Robinson",  new HashSet<>(Collections.singletonList(dentistry)));
 
-        vetRepository.save( adam );
-        vetRepository.save( mike );
+        vetService.save( adam );
+        vetService.save( mike );
     }
 }

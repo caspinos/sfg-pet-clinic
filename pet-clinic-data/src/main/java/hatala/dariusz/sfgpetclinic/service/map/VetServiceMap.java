@@ -1,13 +1,13 @@
-package hatala.dariusz.sfgpetclinic.repository.simple.map;
+package hatala.dariusz.sfgpetclinic.service.map;
 
 import hatala.dariusz.sfgpetclinic.model.Vet;
-import hatala.dariusz.sfgpetclinic.repository.simple.VetRepository;
+import hatala.dariusz.sfgpetclinic.service.VetService;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 @Repository
-public class VetRepositoryMap extends MapRepositoryAbstract<Vet> implements VetRepository {
+public class VetServiceMap extends MapServiceAbstract<Vet> implements VetService {
 
     @Override
     public Optional<Vet> findByLastName(String lastName) {

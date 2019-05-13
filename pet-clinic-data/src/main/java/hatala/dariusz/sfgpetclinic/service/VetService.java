@@ -1,10 +1,10 @@
-package hatala.dariusz.sfgpetclinic.repository.simple;
+package hatala.dariusz.sfgpetclinic.service;
 
 import hatala.dariusz.sfgpetclinic.model.Vet;
 
 import java.util.Optional;
 
-public interface VetRepository extends BaseEntityCrudRepository<Vet> {
+public interface VetService extends BaseEntityCrudService<Vet> {
 
     Optional<Vet> findByLastName(String lastName);
 

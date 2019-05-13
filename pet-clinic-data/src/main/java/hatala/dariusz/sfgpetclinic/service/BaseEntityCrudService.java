@@ -1,11 +1,11 @@
-package hatala.dariusz.sfgpetclinic.repository.simple;
+package hatala.dariusz.sfgpetclinic.service;
 
 import hatala.dariusz.sfgpetclinic.model.BaseEntity;
 
 import java.util.Optional;
 import java.util.Set;
 
-public interface BaseEntityCrudRepository<T extends BaseEntity> {
+public interface BaseEntityCrudService<T extends BaseEntity> {
 
     Set<T> findAll();
 

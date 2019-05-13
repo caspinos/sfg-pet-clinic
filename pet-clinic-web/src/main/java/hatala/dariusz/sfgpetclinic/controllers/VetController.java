@@ -1,6 +1,6 @@
 package hatala.dariusz.sfgpetclinic.controllers;
 
-import hatala.dariusz.sfgpetclinic.repository.simple.VetRepository;
+import hatala.dariusz.sfgpetclinic.service.VetService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/vets")
 public class VetController {
 
-    private final VetRepository vetRepository;
+    private final VetService vetRepository;
 
-    public VetController(VetRepository vetRepository) {
+    public VetController(VetService vetRepository) {
         this.vetRepository = vetRepository;
     }
 

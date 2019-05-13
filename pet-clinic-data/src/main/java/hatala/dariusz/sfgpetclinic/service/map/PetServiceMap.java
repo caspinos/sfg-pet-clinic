@@ -1,17 +1,17 @@
-package hatala.dariusz.sfgpetclinic.repository.simple.map;
+package hatala.dariusz.sfgpetclinic.service.map;
 
 import hatala.dariusz.sfgpetclinic.model.Owner;
 import hatala.dariusz.sfgpetclinic.model.Pet;
-import hatala.dariusz.sfgpetclinic.repository.simple.OwnerRepository;
-import hatala.dariusz.sfgpetclinic.repository.simple.PetRepository;
+import hatala.dariusz.sfgpetclinic.service.OwnerService;
+import hatala.dariusz.sfgpetclinic.service.PetService;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class PetRepositoryMap extends MapRepositoryAbstract<Pet> implements PetRepository {
+public class PetServiceMap extends MapServiceAbstract<Pet> implements PetService {
 
-    private OwnerRepository ownerRepository;
+    private OwnerService ownerRepository;
 
-    public PetRepositoryMap(OwnerRepository ownerRepository) {
+    public PetServiceMap(OwnerService ownerRepository) {
         this.ownerRepository = ownerRepository;
     }
 

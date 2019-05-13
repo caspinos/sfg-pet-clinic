@@ -1,11 +1,11 @@
-package hatala.dariusz.sfgpetclinic.repository.simple.map;
+package hatala.dariusz.sfgpetclinic.service.map;
 
 import hatala.dariusz.sfgpetclinic.model.BaseEntity;
-import hatala.dariusz.sfgpetclinic.repository.simple.BaseEntityCrudRepository;
+import hatala.dariusz.sfgpetclinic.service.BaseEntityCrudService;
 
 import java.util.*;
 
-public abstract class MapRepositoryAbstract<T extends BaseEntity> implements BaseEntityCrudRepository<T> {
+public abstract class MapServiceAbstract<T extends BaseEntity> implements BaseEntityCrudService<T> {
 
     private long nextId = 1;
 

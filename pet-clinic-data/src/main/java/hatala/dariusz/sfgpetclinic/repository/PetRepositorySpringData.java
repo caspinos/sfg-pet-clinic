@@ -1,10 +1,10 @@
-package hatala.dariusz.sfgpetclinic.repository.jpa;
+package hatala.dariusz.sfgpetclinic.repository;
 
 import hatala.dariusz.sfgpetclinic.model.Pet;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PetRepositoryJpa extends CrudRepository<Pet, Long> {
+public interface PetRepositorySpringData extends CrudRepository<Pet, Long> {
 
 }

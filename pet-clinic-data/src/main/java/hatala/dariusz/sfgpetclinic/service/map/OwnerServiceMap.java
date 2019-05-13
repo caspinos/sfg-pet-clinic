@@ -1,13 +1,13 @@
-package hatala.dariusz.sfgpetclinic.repository.simple.map;
+package hatala.dariusz.sfgpetclinic.service.map;
 
 import hatala.dariusz.sfgpetclinic.model.Owner;
-import hatala.dariusz.sfgpetclinic.repository.simple.OwnerRepository;
+import hatala.dariusz.sfgpetclinic.service.OwnerService;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 @Repository
-public class OwnerRepositoryMap extends MapRepositoryAbstract<Owner> implements OwnerRepository {
+public class OwnerServiceMap extends MapServiceAbstract<Owner> implements OwnerService {
     @Override
     public Optional<Owner> findByLastName(String lastName) {
         Owner result = null;
