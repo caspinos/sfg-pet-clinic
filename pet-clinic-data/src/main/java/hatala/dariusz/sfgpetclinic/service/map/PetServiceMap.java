@@ -4,9 +4,9 @@ import hatala.dariusz.sfgpetclinic.model.Owner;
 import hatala.dariusz.sfgpetclinic.model.Pet;
 import hatala.dariusz.sfgpetclinic.service.OwnerService;
 import hatala.dariusz.sfgpetclinic.service.PetService;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
-@Repository
+@Service
 public class PetServiceMap extends MapServiceAbstract<Pet> implements PetService {
 
     private OwnerService ownerRepository;
