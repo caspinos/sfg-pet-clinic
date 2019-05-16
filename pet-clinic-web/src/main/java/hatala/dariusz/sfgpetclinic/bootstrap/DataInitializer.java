@@ -18,13 +18,15 @@ public class DataInitializer implements CommandLineRunner {
     private final PetService petService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
-    public DataInitializer(OwnerService ownerService, VetService vetService, PetService petService, PetTypeService petTypeService, SpecialityService specialityService) {
+    public DataInitializer(OwnerService ownerService, VetService vetService, PetService petService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petService = petService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -75,8 +77,15 @@ public class DataInitializer implements CommandLineRunner {
         // Vet init
         Vet adam = new Vet("Adam", "Burner",  new HashSet<>(Arrays.asList(surgery, radiology)));
         Vet mike = new Vet("Mike", "Robinson",  new HashSet<>(Collections.singletonList(dentistry)));
-
         vetService.save( adam );
         vetService.save( mike );
+
+        // Visit init
+        Visit roxyVisit1 = new Visit(LocalDate.of(2019,01,01), "Routine vaccination", roxy);
+        Visit roxyVisit2 = new Visit(LocalDate.of(2019,02,11), "Health check", roxy);
+        Visit maiseyVisit = new Visit(LocalDate.of(2019,03,03), "Lung surgury", maisey);
+        visitService.save(roxyVisit1);
+        visitService.save(roxyVisit2);
+        visitService.save(maiseyVisit);
     }
 }
