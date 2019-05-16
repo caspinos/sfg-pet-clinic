@@ -4,9 +4,11 @@ import hatala.dariusz.sfgpetclinic.model.Owner;
 import hatala.dariusz.sfgpetclinic.model.Pet;
 import hatala.dariusz.sfgpetclinic.service.OwnerService;
 import hatala.dariusz.sfgpetclinic.service.PetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
+@Profile({"default", "map"})
 public class PetServiceMap extends MapServiceAbstract<Pet> implements PetService {
 
     private OwnerService ownerRepository;
